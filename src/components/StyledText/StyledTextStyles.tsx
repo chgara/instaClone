@@ -24,5 +24,8 @@ const styles = StyleSheet.create({
 		fontFamily: 'Poppins-regular',
 		fontWeight: 'normal',
 	},
+	uppercase: {
+		textTransform: 'uppercase',
+	},
 });
 export default styles;

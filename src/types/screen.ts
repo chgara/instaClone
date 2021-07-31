@@ -1,9 +1,13 @@
-import { StackScreenProps } from '@react-navigation/stack';
+import {
+	StackNavigationOptions,
+	StackScreenProps,
+} from '@react-navigation/stack';
 import StackParamList from 'types/stackParamList';
 
 interface Iscreen {
 	componet: React.FC<IscreenComponentProps>;
 	name: routeName;
+	options?: StackNavigationOptions;
 }
 type IscreenComponentProps = StackScreenProps<
 	StackParamList,

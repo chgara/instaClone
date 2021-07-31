@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, Button } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import { StackScreenProps } from '@react-navigation/stack';
-import StyledText from 'components/StyledText/StyledText';
+import StyledText from 'components/StyledText';
 import StackParamList from 'types/stackParamList';
 
-const Home: React.FC<props> = ({ navigation }) => {
+const Body: React.FC<props> = props => {
+	const { navigation } = props;
 	return (
-		<View style={styles.container}>
+		<View style={styles.body}>
 			<StyledText bold dark>
 				Open up App.tsx to start working on your app!
 			</StyledText>
@@ -24,16 +24,14 @@ const Home: React.FC<props> = ({ navigation }) => {
 					})
 				}
 			/>
-			<StatusBar style='auto' />
 		</View>
 	);
 };
-export default Home;
+export default Body;
 
 type props = StackScreenProps<StackParamList, 'Home'>;
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
+	body: {
 		backgroundColor: '#fff',
 		alignItems: 'center',
 		justifyContent: 'center',

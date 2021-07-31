@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Button } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { StackScreenProps } from '@react-navigation/stack';
-import StyledText from 'components/StyledText/StyledText';
+import StyledText from 'components/StyledText';
 import StackParamList from 'types/stackParamList';
 
 const Search: React.FC<props> = ({ navigation }) => {

@@ -10,6 +10,7 @@ const StyledText: React.FC<IStyledTextProps> = ({
 	big,
 	dark,
 	white,
+	uppercase,
 	style,
 }: IStyledTextProps) => {
 	const textStyles: StyleProp<any>[] = [
@@ -20,6 +21,7 @@ const StyledText: React.FC<IStyledTextProps> = ({
 		big && styles.big,
 		dark && styles.dark,
 		white && styles.white,
+		uppercase && styles.uppercase,
 		style,
 	];
 
@@ -39,5 +41,6 @@ interface IStyledTextProps {
 	big?: boolean;
 	dark?: boolean;
 	white?: boolean;
+	uppercase?: boolean;
 	style?: StyleSheetProperties;
 }

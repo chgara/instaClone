@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import * as React from 'react';
@@ -16,7 +16,8 @@ export default function useCachedResources() {
 
 				// Load fonts
 				await Font.loadAsync({
-					...Ionicons.font,
+					...FontAwesome5.font,
+					...AntDesign.font,
 					'Poppins-regular': require('../../assets/fonts/Poppins-Regular.ttf'),
 				});
 			} catch (e) {
