@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleProp, StyleSheetProperties } from 'react-native';
+import { Text, StyleProp } from 'react-native';
 import styles from './StyledTextStyles';
 
 const StyledText: React.FC<IStyledTextProps> = ({
@@ -12,6 +12,7 @@ const StyledText: React.FC<IStyledTextProps> = ({
 	white,
 	uppercase,
 	style,
+	numberOfLines,
 }: IStyledTextProps) => {
 	const textStyles: StyleProp<any>[] = [
 		styles.text,
@@ -25,8 +26,10 @@ const StyledText: React.FC<IStyledTextProps> = ({
 		style,
 	];
 
+	const num = numberOfLines ? numberOfLines : 0;
+
 	return (
-		<Text style={textStyles} numberOfLines={0}>
+		<Text style={textStyles} numberOfLines={num}>
 			{children}
 		</Text>
 	);
@@ -42,5 +45,6 @@ interface IStyledTextProps {
 	dark?: boolean;
 	white?: boolean;
 	uppercase?: boolean;
-	style?: StyleSheetProperties;
+	style?: StyleProp<any>;
+	numberOfLines?: number;
 }

@@ -6,9 +6,8 @@ import Header from './Header';
 import Body from './Body';
 
 const Home: React.FC<props> = props => (
-	<Layout {...props}>
-		<Header {...props} />
-		<Body {...props} />
+	<Layout imageSource='https://avatars.githubusercontent.com/u/1516955?v=4'>
+		<Body Header={Header} />
 	</Layout>
 );
 export default Home;

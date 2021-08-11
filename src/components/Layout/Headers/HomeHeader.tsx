@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, StatusBar } from 'react-native';
 import { AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import StyledText from 'components/StyledText';
-import theme from 'themes/theme';
+import theme from 'utils/themes/theme';
 import { StackHeaderProps } from '@react-navigation/stack';
 
 const HomeHeader: React.FC<props> = ({}) => {
@@ -23,11 +23,14 @@ export default HomeHeader;
 
 type props = StackHeaderProps;
 
+const barHeight =
+	StatusBar.currentHeight + StatusBar.currentHeight / 2;
+const paddingTop = StatusBar.currentHeight ? barHeight : 50;
 const styles = StyleSheet.create({
 	header: {
 		width: '100%',
 		backgroundColor: theme.colors.primary,
-		paddingTop: StatusBar.currentHeight,
+		paddingTop: paddingTop,
 		paddingBottom: '5%',
 		paddingHorizontal: '2%',
 		flexDirection: 'row',

@@ -3,6 +3,7 @@ const theme = {
 		secondary: 'black',
 		primary: 'white',
 		third: 'blue',
+		grey: 'grey',
 	},
 };
 export default theme;

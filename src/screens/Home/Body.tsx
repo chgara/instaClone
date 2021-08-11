@@ -1,39 +1,32 @@
 import React from 'react';
-import { StyleSheet, View, Button } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
-import StyledText from 'components/StyledText';
-import StackParamList from 'types/stackParamList';
+import { StyleSheet, View, FlatList } from 'react-native';
+import data from 'data/posts';
+import Post from 'components/Post';
 
-const Body: React.FC<props> = props => {
-	const { navigation } = props;
+const Body: React.FC<props> = ({ Header }) => {
 	return (
 		<View style={styles.body}>
-			<StyledText bold dark>
-				Open up App.tsx to start working on your app!
-			</StyledText>
-			<Button
-				title='Go to search'
-				onPress={() => navigation.navigate('Search')}
-			/>
-			<Button
-				title='Go to Profile'
-				onPress={() =>
-					navigation.navigate({
-						name: 'Profile',
-						params: { userId: 20 },
-					})
+			<FlatList
+				data={data}
+				style={styles.body}
+				ListHeaderComponent={<Header />}
+				keyExtractor={(item, index) =>
+					`${index + Math.random() * Math.random() * 10}`
 				}
+				renderItem={({ item, index }) => <Post post={item} />}
 			/>
 		</View>
 	);
 };
 export default Body;
 
-type props = StackScreenProps<StackParamList, 'Home'>;
+interface props {
+	Header: React.FC;
+}
+
 const styles = StyleSheet.create({
 	body: {
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
+		flex: 1,
+		width: '100%',
 	},
 });

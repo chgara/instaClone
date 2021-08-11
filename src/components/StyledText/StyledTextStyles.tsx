@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 		color: 'white',
 	},
 	text: {
-		fontSize: 14,
+		fontSize: 16,
 		color: 'grey',
 		fontFamily: 'Poppins-regular',
 		fontWeight: 'normal',
