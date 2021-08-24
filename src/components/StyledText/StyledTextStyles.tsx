@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import theme from 'utils/themes/theme';
 const styles = StyleSheet.create({
 	bold: {
 		fontWeight: 'bold',
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		fontSize: 16,
-		color: 'white',
+		color: theme.colors.secondary,
 		fontFamily: 'Poppins-regular',
 		fontWeight: 'normal',
 	},

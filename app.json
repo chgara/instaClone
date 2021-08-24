@@ -1,35 +1,34 @@
 {
-  "expo": {
-    "name": "instaClone",
-    "slug": "instaClone",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "jsEngine": "hermes",
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "package": "instaclone.chgara.client"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "description": "This is an instagram clone"
-  }
+	"expo": {
+		"name": "instaClone",
+		"slug": "instaClone",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/icon.png",
+		"userInterfaceStyle": "automatic",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#fff"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true
+		},
+		"android": {
+			"jsEngine": "hermes",
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#FFF"
+			},
+			"package": "instaclone.chgara.client"
+		},
+		"web": {
+			"favicon": "./assets/favicon.png"
+		},
+		"description": "This is an instagram clone"
+	}
 }

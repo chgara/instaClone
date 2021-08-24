@@ -9,7 +9,7 @@ const Layout: React.FC = ({ children }) => {
 		<View style={styles.container}>
 			{children}
 			<Footer />
-			<StatusBar style='light' />
+			<StatusBar style='auto' />
 		</View>
 	);
 };
