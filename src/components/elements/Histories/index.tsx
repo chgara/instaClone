@@ -15,7 +15,12 @@ const History: React.FC<props> = ({ imageSource, name, bff }) => {
 					}}
 				/>
 			</View>
-			<StyledText numberOfLines={1} small bold dark>
+			<StyledText
+				numberOfLines={1}
+				small
+				bold
+				style={styles.text}
+			>
 				{name}
 			</StyledText>
 		</View>
@@ -34,9 +39,10 @@ const borderSize = width / 5.5;
 const styles = StyleSheet.create({
 	history: {
 		width: borderSize,
-		alignItems: 'center',
+		height: '100%',
 		marginLeft: borderSize / 5,
-		justifyContent: 'space-around',
+		flexDirection: 'row',
+		flexWrap: 'wrap',
 	},
 	border: {
 		width: borderSize,
@@ -53,5 +59,8 @@ const styles = StyleSheet.create({
 		borderRadius: 1000,
 		borderWidth: 1,
 		borderColor: theme.colors.grey,
+	},
+	text: {
+		marginTop: '5%',
 	},
 });

@@ -21,11 +21,16 @@ const CreateHistory: React.FC<props> = ({ imageSource }) => {
 						name='pluscircle'
 						style={styles.plus}
 						size={22}
-						color='blue'
+						color={theme.colors.primary}
 					/>
 				</View>
 			</View>
-			<StyledText numberOfLines={1} small bold dark>
+			<StyledText
+				numberOfLines={1}
+				small
+				bold
+				style={styles.text}
+			>
 				Your history
 			</StyledText>
 		</View>
@@ -43,26 +48,26 @@ const styles = StyleSheet.create({
 	history: {
 		width: borderSize,
 		height: '100%',
-		alignItems: 'center',
-		marginLeft: borderSize / 10,
-		justifyContent: 'space-around',
+		marginLeft: borderSize / 4,
+		flexDirection: 'row',
+		flexWrap: 'wrap',
 	},
 	border: {
 		width: borderSize,
 		height: borderSize,
 		alignItems: 'center',
 		justifyContent: 'center',
-		/* borderColor: 'red', */
-		/* borderWidth: 2, */
-		/* borderRadius: 1000, */
+		borderColor: theme.colors.secondary,
+		borderWidth: 2,
+		borderRadius: 1000,
 	},
 	logoContainer: {
 		position: 'absolute',
-		bottom: borderSize / 20,
-		right: borderSize / 20,
-		backgroundColor: theme.colors.primary,
+		bottom: -borderSize / 20,
+		right: -borderSize / 20,
+		backgroundColor: theme.colors.secondary,
 		borderRadius: 1000,
-		borderColor: theme.colors.primary,
+		borderColor: theme.colors.secondary,
 		borderWidth: 2,
 	},
 	plus: {},
@@ -72,5 +77,8 @@ const styles = StyleSheet.create({
 		borderRadius: 1000,
 		borderWidth: 0.5,
 		borderColor: theme.colors.grey,
+	},
+	text: {
+		marginTop: '5%',
 	},
 });

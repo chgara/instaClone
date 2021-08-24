@@ -2,7 +2,7 @@ import React from 'react';
 import Stack from 'navigation/Stack';
 import Iscreen from 'types/screen';
 
-const Navigators: React.FC<props> = ({ screens }) => (
+const MainNavigators: React.FC<props> = ({ screens }) => (
 	<Stack.Navigator>
 		{screens.map((screen, index) => (
 			<Stack.Screen
@@ -14,7 +14,7 @@ const Navigators: React.FC<props> = ({ screens }) => (
 		))}
 	</Stack.Navigator>
 );
-export default Navigators;
+export default MainNavigators;
 interface props {
 	screens: Iscreen[];
 }

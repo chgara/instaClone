@@ -1,44 +1,61 @@
 import React from 'react';
-import { StyleSheet, Dimensions, FlatList } from 'react-native';
-import History from 'components/elements/Histories';
-import CreateHistory from 'components/elements/Histories/CreateHistory';
-import data from 'data';
+import { StyleSheet, View, StatusBar } from 'react-native';
+import StyledText from 'components/StyledText';
 import theme from 'utils/themes/theme';
 import { width } from 'utils/constants/dimensions';
+import InstaCloneIcons from 'utils/icons';
 
-//TODO: Implement react skeleton when loading data
-const Header: React.FC = () => {
+const HomeHeader: React.FC = () => {
 	return (
-		<FlatList
-			data={data}
-			style={styles.header}
-			horizontal
-			showsHorizontalScrollIndicator={false}
-			ListHeaderComponent={
-				<CreateHistory imageSource={data[1].ownerAvatarUrl} />
-			}
-			keyExtractor={(item, index) =>
-				`${index + Math.random() * Math.random() * 10}`
-			}
-			renderItem={({ item, index }) => (
-				<History
-					name={item.fullName}
-					imageSource={item.ownerAvatarUrl}
-					bff={false}
+		<View style={styles.header}>
+			<View style={styles.button}>
+				<InstaCloneIcons
+					name='Setting'
+					size={24}
+					color={theme.colors.secondary}
 				/>
-			)}
-		/>
+			</View>
+			<View style={styles.logo}>
+				<StyledText white bold uppercase>
+					Instagram
+				</StyledText>
+			</View>
+			<View style={styles.button}>
+				<InstaCloneIcons
+					name='Message'
+					size={24}
+					color={theme.colors.secondary}
+				/>
+			</View>
+		</View>
 	);
 };
-export default Header;
+export default HomeHeader;
 
+const currentHeight = StatusBar.currentHeight
+	? StatusBar.currentHeight
+	: 0;
+const paddingTop = StatusBar.currentHeight
+	? currentHeight + currentHeight / 10
+	: 50;
+
+const borderSize = width / 5.5;
 const styles = StyleSheet.create({
-	container: {},
 	header: {
-		flex: 1,
-		maxHeight: width / 4,
-		borderBottomColor: theme.colors.grey,
-		borderBottomWidth: 0.5,
+		width: '100%',
 		backgroundColor: theme.colors.primary,
+		paddingTop: paddingTop,
+		paddingBottom: '4%',
+		paddingHorizontal: borderSize / 4,
+		flexDirection: 'row',
+		alignItems: 'center',
+	},
+	logo: {
+		alignItems: 'center',
+		flex: 4,
+	},
+	button: {
+		height: '100%',
+		alignItems: 'center',
 	},
 });

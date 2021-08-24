@@ -4,20 +4,17 @@ import { StatusBar } from 'expo-status-bar';
 import Footer from 'components/Layout/Footer';
 import theme from 'utils/themes/theme';
 
-const Layout: React.FC<props> = ({ imageSource, children }) => {
+const Layout: React.FC = ({ children }) => {
 	return (
 		<View style={styles.container}>
 			{children}
-			<Footer imageSource={imageSource} />
-			<StatusBar style='auto' />
+			<Footer />
+			<StatusBar style='light' />
 		</View>
 	);
 };
 export default Layout;
 
-interface props {
-	imageSource: string;
-}
 const styles = StyleSheet.create({
 	container: {
 		width: '100%',

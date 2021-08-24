@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'instaCloneIcons';
+  src:  url('fonts/instaCloneIcons.eot?ehkk05');
+  src:  url('fonts/instaCloneIcons.eot?ehkk05#iefix') format('embedded-opentype'),
+    url('fonts/instaCloneIcons.ttf?ehkk05') format('truetype'),
+    url('fonts/instaCloneIcons.woff?ehkk05') format('woff'),
+    url('fonts/instaCloneIcons.svg?ehkk05#instaCloneIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'instaCloneIcons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Wallet:before {
+  content: "\e900";
+}
+.icon-Star:before {
+  content: "\e901";
+}
+.icon-Setting:before {
+  content: "\e902";
+}
+.icon-Search:before {
+  content: "\e903";
+}
+.icon-Scan:before {
+  content: "\e904";
+}
+.icon-Profile:before {
+  content: "\e905";
+}
+.icon-Plus:before {
+  content: "\e906";
+}
+.icon-Notification:before {
+  content: "\e907";
+}
+.icon-Message:before {
+  content: "\e908";
+}
+.icon-Location:before {
+  content: "\e909";
+}
+.icon-Home:before {
+  content: "\e90a";
+}
+.icon-Heart:before {
+  content: "\e90b";
+}
+.icon-Graph:before {
+  content: "\e90c";
+}
+.icon-Game:before {
+  content: "\e90d";
+}
+.icon-Folder:before {
+  content: "\e90e";
+}
+.icon-Document:before {
+  content: "\e90f";
+}
+.icon-Discovery:before {
+  content: "\e910";
+}
+.icon-Chat:before {
+  content: "\e911";
+}
+.icon-Chart:before {
+  content: "\e912";
+}
+.icon-Category:before {
+  content: "\e913";
+}
+.icon-Calendar:before {
+  content: "\e914";
+}
+.icon-Bookmark:before {
+  content: "\e915";
+}
+.icon-Bag:before {
+  content: "\e916";
+}
+.icon-Activity:before {
+  content: "\e917";
+}

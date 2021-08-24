@@ -1,9 +1,3 @@
-import {
-	AntDesign,
-	FontAwesome5,
-	Ionicons,
-	MaterialCommunityIcons,
-} from '@expo/vector-icons';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import * as React from 'react';
@@ -21,11 +15,8 @@ export default function useCachedResources() {
 
 				// Load fonts
 				await Font.loadAsync({
-					...Ionicons.font,
-					...FontAwesome5.font,
-					...MaterialCommunityIcons.font,
-					...AntDesign.font,
 					'Poppins-regular': require('../../assets/fonts/Poppins-Regular.ttf'),
+					InstaCloneIcons: require('../../assets/icons/fonts/instaCloneIcons.ttf'),
 				});
 			} catch (e) {
 				// We might want to provide this error information to an error reporting service
