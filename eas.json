@@ -1,9 +1,12 @@
 {
-  "build": {
-    "release": {},
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal"
-    }
-  }
+	"build": {
+		"release": {},
+		"development": {
+			"developmentClient": true,
+			"distribution": "internal",
+			"env": {
+				"ANDROID_SDK_ROOT": "/home/chgara/Android/Sdk"
+			}
+		}
+	}
 }
