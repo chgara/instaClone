@@ -16,7 +16,9 @@
 		},
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
-			"supportsTablet": true
+			"supportsTablet": true,
+			"buildNumber": "0.1.0",
+			"bundleIdentifier": "com.chgara.instaclone"
 		},
 		"android": {
 			"jsEngine": "hermes",
@@ -24,7 +26,8 @@
 				"foregroundImage": "./assets/adaptive-icon.png",
 				"backgroundColor": "#FFF"
 			},
-			"package": "instaclone.chgara.client"
+			"package": "com.chgara.instaclone",
+			"versionCode": 0.1
 		},
 		"web": {
 			"favicon": "./assets/favicon.png"
