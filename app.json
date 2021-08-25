@@ -21,7 +21,6 @@
 			"bundleIdentifier": "com.chgara.instaclone"
 		},
 		"android": {
-			"jsEngine": "hermes",
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/adaptive-icon.png",
 				"backgroundColor": "#FFF"
