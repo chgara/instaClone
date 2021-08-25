@@ -27,7 +27,7 @@
 				"backgroundColor": "#FFF"
 			},
 			"package": "com.chgara.instaclone",
-			"versionCode": 0.1
+			"versionCode": 1
 		},
 		"web": {
 			"favicon": "./assets/favicon.png"
