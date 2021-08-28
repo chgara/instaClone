@@ -1,9 +1,26 @@
 import React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 import data from 'data/posts';
-import Post from 'components/Post';
+import Post, { postHeight } from 'components/Post';
 import Histories from './Histories';
+import { Ipost } from 'types/profile';
 import theme from 'utils/themes/theme';
+
+const renderItem = ({ item, index }: renderItemProps) => (
+	<Post post={item} index={index} />
+);
+
+const keyExtractor = (item: Ipost, index: number) =>
+	`${index + Math.random() * Math.random() * 10}`;
+
+const getItemLayout = (
+	data: Ipost[] | null | undefined,
+	index: number
+) => ({
+	length: postHeight,
+	offset: postHeight,
+	index,
+});
 
 const Body: React.FC = () => {
 	return (
@@ -12,12 +29,9 @@ const Body: React.FC = () => {
 				data={data}
 				style={{ flex: 1 }}
 				ListHeaderComponent={<Histories />}
-				keyExtractor={(item, index) =>
-					`${index + Math.random() * Math.random() * 10}`
-				}
-				renderItem={({ item, index }) => {
-					return <Post post={item} index={index} />;
-				}}
+				getItemLayout={getItemLayout}
+				keyExtractor={keyExtractor}
+				renderItem={renderItem}
 			/>
 		</View>
 	);
@@ -33,3 +47,8 @@ const styles = StyleSheet.create({
 		borderTopStartRadius: theme.border.rounded,
 	},
 });
+
+interface renderItemProps {
+	item: Ipost;
+	index: number;
+}

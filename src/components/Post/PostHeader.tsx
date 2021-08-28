@@ -58,15 +58,15 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 	},
 	shareIcon: {
-		backgroundColor: theme.colors.white,
 		width: '45%',
 		height: '15%',
 		borderRadius: theme.border.rounded,
+		backgroundColor: theme.colors.white,
 	},
 	shareIcon2: {
-		backgroundColor: theme.colors.transparentWhite,
 		height: '10%',
 		width: '15%',
 		borderRadius: theme.border.rounded,
+		backgroundColor: theme.colors.transparentWhite,
 	},
 });

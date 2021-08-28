@@ -5,15 +5,14 @@ import { StackScreenProps } from '@react-navigation/stack';
 import StyledText from 'components/StyledText';
 import StackParamList from 'types/stackParamList';
 
-const Profile: React.FC<props> = ({ navigation, route }) => {
-	const { userId } = route.params;
+const Profile: React.FC<props> = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
 			<StyledText bold dark>
 				You are in the profile page
 			</StyledText>
 			<StyledText bold dark big>
-				{JSON.stringify(userId)}
+				Hola Paco
 			</StyledText>
 
 			<Button

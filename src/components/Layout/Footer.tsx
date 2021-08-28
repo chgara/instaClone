@@ -1,36 +1,31 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import InstaCloneIcons from 'utils/icons';
 import theme from 'utils/themes/theme';
+import defaultScreens from 'utils/constants/defaultScreens';
+import { routeName } from 'types/screen';
 
 const Footer: React.FC = () => {
+	const route = useRoute();
+	const navigatior = useNavigation();
+	const handlePress = (name: routeName): (() => void) => {
+		if (name === 'Home') {
+			return () => navigatior.navigate(name);
+		}
+		return () => navigatior.navigate(name);
+	};
 	return (
 		<View style={styles.footer}>
-			<InstaCloneIcons
-				name='Home'
-				size={24}
-				color={theme.colors.secondary}
-			/>
-			<InstaCloneIcons
-				name='Search'
-				size={24}
-				color={theme.colors.secondary}
-			/>
-			<InstaCloneIcons
-				name='Plus'
-				size={24}
-				color={theme.colors.secondary}
-			/>
-			<InstaCloneIcons
-				name='Heart'
-				size={24}
-				color={theme.colors.secondary}
-			/>
-			<InstaCloneIcons
-				name='Profile'
-				size={24}
-				color={theme.colors.secondary}
-			/>
+			{defaultScreens.map(name => (
+				<Pressable onPress={handlePress(name)}>
+					<InstaCloneIcons
+						name={name === route.name ? `${name}1` : name}
+						size={24}
+						color={theme.colors.secondary}
+					/>
+				</Pressable>
+			))}
 		</View>
 	);
 };

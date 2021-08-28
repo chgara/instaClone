@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, View, Dimensions } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import StyledText from 'components/StyledText';
 import theme from 'utils/themes/theme';
 import { width } from 'utils/constants/dimensions';

@@ -6,6 +6,16 @@ import data from 'data';
 import theme from 'utils/themes/theme';
 import { width } from 'utils/constants/dimensions';
 
+const renderItem = ({ item, index }: renderItemProps) => (
+	<History
+		name={item.fullName}
+		imageSource={item.ownerAvatarUrl}
+		bff={false}
+	/>
+);
+const keyExtractor = (item, index) =>
+	`${index + Math.random() * Math.random() * 10}`;
+
 //TODO: Implement react skeleton when loading data
 const Histories: React.FC = () => {
 	return (
@@ -20,16 +30,8 @@ const Histories: React.FC = () => {
 						imageSource={data[1].ownerAvatarUrl}
 					/>
 				}
-				keyExtractor={(item, index) =>
-					`${index + Math.random() * Math.random() * 10}`
-				}
-				renderItem={({ item, index }) => (
-					<History
-						name={item.fullName}
-						imageSource={item.ownerAvatarUrl}
-						bff={false}
-					/>
-				)}
+				keyExtractor={keyExtractor}
+				renderItem={renderItem}
 			/>
 		</View>
 	);
@@ -44,3 +46,12 @@ const styles = StyleSheet.create({
 		zIndex: 111,
 	},
 });
+interface renderItemProps {
+	item: historyObj;
+	index: number;
+}
+
+interface historyObj {
+	fullName: string;
+	ownerAvatarUrl: string;
+}

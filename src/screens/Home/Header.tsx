@@ -32,9 +32,7 @@ const HomeHeader: React.FC = () => {
 };
 export default HomeHeader;
 
-const currentHeight = StatusBar.currentHeight
-	? StatusBar.currentHeight
-	: 0;
+const currentHeight = StatusBar.currentHeight || 0;
 const paddingTop = StatusBar.currentHeight
 	? currentHeight + currentHeight / 2
 	: 50;
