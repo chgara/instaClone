@@ -17,8 +17,11 @@ const Footer: React.FC = () => {
 	};
 	return (
 		<View style={styles.footer}>
-			{defaultScreens.map(name => (
-				<Pressable onPress={handlePress(name)}>
+			{defaultScreens.map((name, index) => (
+				<Pressable
+					key={`footer-${name}${index}`}
+					onPress={handlePress(name)}
+				>
 					<InstaCloneIcons
 						name={name === route.name ? `${name}1` : name}
 						size={24}

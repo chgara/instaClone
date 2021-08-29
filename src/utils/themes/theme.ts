@@ -19,5 +19,8 @@ const theme = {
 	border: {
 		rounded: 35,
 	},
+	icons: {
+		normal: 24,
+	},
 };
 export default theme;

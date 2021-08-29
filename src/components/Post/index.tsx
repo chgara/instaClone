@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import PostHeader from './PostHeader';
 import PostBody from './PostBody';
+import PostFooter from './PostFooter';
 import { Ipost } from 'types/profile';
 import { height, width } from 'utils/constants/dimensions';
 import theme from 'utils/themes/theme';
@@ -18,6 +19,7 @@ const Post: React.FC<props> = ({ post, index }) => {
 				imageSrc={post.imageSrc}
 				postMeasurements={measures}
 			/>
+			<PostFooter {...post} />
 		</View>
 	);
 };

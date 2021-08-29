@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
 		fontWeight: '300',
 	},
 	small: {
-		fontSize: 11,
+		fontSize: 12,
 	},
 	big: {
 		fontSize: 20,
