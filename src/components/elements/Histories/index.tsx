@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import StyledText from 'components/StyledText';
 import theme from 'utils/themes/theme';
 import { width } from 'utils/constants/dimensions';
@@ -7,14 +8,17 @@ import { width } from 'utils/constants/dimensions';
 const History: React.FC<props> = ({ imageSource, name, bff }) => {
 	return (
 		<View style={styles.history}>
-			<View style={styles.border}>
+			<LinearGradient
+				colors={[...theme.colors.mainGradient]}
+				style={styles.border}
+			>
 				<Image
 					style={styles.image}
 					source={{
 						uri: imageSource,
 					}}
 				/>
-			</View>
+			</LinearGradient>
 			<StyledText
 				numberOfLines={1}
 				small
@@ -34,7 +38,7 @@ interface props {
 	bff: boolean;
 }
 
-const imageSize = width / 6.5;
+const imageSize = width / 5.8;
 const borderSize = width / 5.5;
 const styles = StyleSheet.create({
 	history: {
@@ -49,16 +53,14 @@ const styles = StyleSheet.create({
 		height: borderSize,
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderColor: 'red',
-		borderWidth: 2,
 		borderRadius: 1000,
 	},
 	image: {
 		width: imageSize,
 		height: imageSize,
 		borderRadius: 1000,
-		borderWidth: 1,
-		borderColor: theme.colors.grey,
+		borderWidth: 3,
+		borderColor: theme.colors.white,
 	},
 	text: {
 		marginTop: '5%',

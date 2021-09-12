@@ -62,11 +62,22 @@ const styles = StyleSheet.create({
 		height: '15%',
 		borderRadius: theme.border.rounded,
 		backgroundColor: theme.colors.white,
+		shadowColor: theme.colors.secondary,
+		shadowOffset: {
+			width: 0,
+			height: -20,
+		},
+		shadowRadius: 5,
+		shadowOpacity: 1.0,
+		//TODO:SHADOW IN IOS
+		elevation: theme.elevation.normal,
 	},
 	shareIcon2: {
 		height: '10%',
 		width: '15%',
 		borderRadius: theme.border.rounded,
 		backgroundColor: theme.colors.transparentWhite,
+		//TODO:SHADOW IN IOS
+		elevation: theme.elevation.normal,
 	},
 });

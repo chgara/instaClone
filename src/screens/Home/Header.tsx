@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, StatusBar, Image } from 'react-native';
-import StyledText from 'components/StyledText';
+import { LinearGradient } from 'expo-linear-gradient';
 import theme from 'utils/themes/theme';
 import { width } from 'utils/constants/dimensions';
 import InstaCloneIcons from 'utils/icons';
@@ -25,7 +25,10 @@ const HomeHeader: React.FC = () => {
 					size={24}
 					color={theme.colors.secondary}
 				/>
-				<View style={styles.newMessage}></View>
+				<LinearGradient
+					colors={[...theme.colors.mainGradient]}
+					style={styles.newMessage}
+				/>
 			</View>
 		</View>
 	);
@@ -38,6 +41,8 @@ const paddingTop = StatusBar.currentHeight
 	: 50;
 
 const borderSize = width / 5.5;
+
+//TODO: add shadow for ios
 const styles = StyleSheet.create({
 	header: {
 		width: '100%',
@@ -64,9 +69,9 @@ const styles = StyleSheet.create({
 		borderRadius: 100,
 		width: 12,
 		height: 12,
-		backgroundColor: theme.colors.accent,
 		position: 'absolute',
 		bottom: '15%',
 		right: '-10%',
+		elevation: 20,
 	},
 });

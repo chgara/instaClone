@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
 import StyledText from 'components/StyledText';
 import InstaCloneIcons from 'utils/icons';
 import theme from 'utils/themes/theme';
@@ -32,8 +32,11 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		paddingVertical: '4%',
 		paddingHorizontal: '5%',
+		elevation: 20,
 	},
 	txt: {
 		paddingLeft: '4%',
+		elevation: 50,
 	},
+	shadow: {},
 });

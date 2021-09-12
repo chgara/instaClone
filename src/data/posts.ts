@@ -10,7 +10,7 @@ const posts: Ipost[] = [
 		numLikes: 3222,
 		numComments: 30,
 		imageSrc:
-			'https://static.comunicae.com/photos/notas/1203769/1554976142_deer_32755941920.jpg',
+			'https://ideakreativa.net/wp-content/uploads/2019/09/minimalismo-reglas-y-ejemplos-1.jpg',
 	},
 	{
 		profilePic:
@@ -21,7 +21,7 @@ const posts: Ipost[] = [
 		numLikes: 3222,
 		numComments: 30,
 		imageSrc:
-			'https://ideakreativa.net/wp-content/uploads/2019/09/minimalismo-reglas-y-ejemplos-1.jpg',
+			'https://static.comunicae.com/photos/notas/1203769/1554976142_deer_32755941920.jpg',
 	},
 	{
 		profilePic:

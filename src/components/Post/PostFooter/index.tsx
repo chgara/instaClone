@@ -5,25 +5,32 @@ import CommentsSection from './CommentsSection';
 import SendSection from './SendSection';
 import SavedSection from './SavedSection';
 
-const PostHeader: React.FC<props> = ({}) => {
+const PostFooter: React.FC<props> = ({
+	isSaved,
+	isLiked,
+	numLikes,
+	numComments,
+}) => {
 	return (
 		<View style={styles.header}>
 			<View style={styles.left}>
-				<HeartSection numLikes={78} isLiked />
-				<CommentsSection numComments={9} />
+				<HeartSection numLikes={numLikes} isLiked={isLiked} />
+				<CommentsSection numComments={numComments} />
 				<SendSection />
 			</View>
 			<View style={styles.right}>
-				<SavedSection isSaved={false} />
+				<SavedSection isSaved={isSaved} />
 			</View>
 		</View>
 	);
 };
-export default PostHeader;
+export default PostFooter;
 
 interface props {
-	profilePic: string;
-	profileName: string;
+	numLikes: number;
+	numComments: number;
+	isSaved: boolean;
+	isLiked: boolean;
 }
 
 const styles = StyleSheet.create({

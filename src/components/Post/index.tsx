@@ -14,12 +14,20 @@ const Post: React.FC<props> = ({ post, index }) => {
 	const measures = { postWidth, postHeight };
 	return (
 		<View style={[styles.post, { top: `-${index * 5}%` }]}>
-			<PostHeader {...post} />
+			<PostHeader
+				profilePic={post.profilePic}
+				profileName={post.profileName}
+			/>
 			<PostBody
 				imageSrc={post.imageSrc}
 				postMeasurements={measures}
 			/>
-			<PostFooter {...post} />
+			<PostFooter
+				numLikes={78}
+				numComments={9}
+				isSaved={true}
+				isLiked
+			/>
 		</View>
 	);
 };
@@ -37,8 +45,9 @@ const styles = StyleSheet.create({
 		borderTopStartRadius: theme.border.rounded,
 		borderTopEndRadius: theme.border.rounded,
 		overflow: 'hidden',
-		backgroundColor: theme.colors.primary,
-		shadowColor: 'white',
+		backgroundColor: theme.colors.secondary,
+		//TODO:SHADOW IN IOS
+		shadowColor: theme.colors.secondary,
 		shadowOffset: {
 			width: 0,
 			height: -20,

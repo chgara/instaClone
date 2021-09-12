@@ -10,9 +10,6 @@ const Footer: React.FC = () => {
 	const route = useRoute();
 	const navigatior = useNavigation();
 	const handlePress = (name: routeName): (() => void) => {
-		if (name === 'Home') {
-			return () => navigatior.navigate(name);
-		}
 		return () => navigatior.navigate(name);
 	};
 	return (

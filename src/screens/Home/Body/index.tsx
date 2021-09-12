@@ -6,22 +6,6 @@ import Histories from './Histories';
 import { Ipost } from 'types/profile';
 import theme from 'utils/themes/theme';
 
-const renderItem = ({ item, index }: renderItemProps) => (
-	<Post post={item} index={index} />
-);
-
-const keyExtractor = (item: Ipost, index: number) =>
-	`${index + Math.random() * Math.random() * 10}`;
-
-const getItemLayout = (
-	data: Ipost[] | null | undefined,
-	index: number
-) => ({
-	length: postHeight,
-	offset: postHeight,
-	index,
-});
-
 const Body: React.FC = () => {
 	return (
 		<View style={styles.body}>
@@ -52,3 +36,19 @@ interface renderItemProps {
 	item: Ipost;
 	index: number;
 }
+
+const renderItem = ({ item, index }: renderItemProps) => (
+	<Post post={item} index={index} />
+);
+
+const keyExtractor = (item: Ipost, index: number) =>
+	`${index + Math.random() * Math.random() * 10}`;
+
+const getItemLayout = (
+	data: Ipost[] | null | undefined,
+	index: number
+) => ({
+	length: postHeight,
+	offset: postHeight,
+	index,
+});

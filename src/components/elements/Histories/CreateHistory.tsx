@@ -1,6 +1,7 @@
 import React from 'react';
-import { Image, StyleSheet, View, Dimensions } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import StyledText from 'components/StyledText';
 import theme from 'utils/themes/theme';
 import { width } from 'utils/constants/dimensions';
@@ -9,22 +10,28 @@ import { width } from 'utils/constants/dimensions';
 const CreateHistory: React.FC<props> = ({ imageSource }) => {
 	return (
 		<View style={styles.history}>
-			<View style={styles.border}>
+			<LinearGradient
+				colors={[...theme.colors.mainGradient]}
+				style={styles.border}
+			>
 				<Image
 					style={styles.image}
 					source={{
 						uri: imageSource,
 					}}
 				/>
-				<View style={styles.logoContainer}>
+				<LinearGradient
+					colors={[...theme.colors.mainGradient]}
+					style={styles.logoContainer}
+				>
 					<AntDesign
 						name='pluscircle'
 						style={styles.plus}
 						size={22}
 						color={theme.colors.primary}
 					/>
-				</View>
-			</View>
+				</LinearGradient>
+			</LinearGradient>
 			<StyledText
 				numberOfLines={1}
 				small
@@ -42,7 +49,7 @@ interface props {
 	imageSource: string;
 }
 
-const imageSize = width / 6.5;
+const imageSize = width / 5.8;
 const borderSize = width / 5.5;
 const styles = StyleSheet.create({
 	history: {
@@ -57,26 +64,22 @@ const styles = StyleSheet.create({
 		height: borderSize,
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderColor: theme.colors.secondary,
-		borderWidth: 2,
-		borderRadius: 1000,
+		borderRadius: 100,
 	},
 	logoContainer: {
 		position: 'absolute',
 		bottom: -borderSize / 20,
 		right: -borderSize / 20,
-		backgroundColor: theme.colors.secondary,
-		borderRadius: 1000,
-		borderColor: theme.colors.secondary,
-		borderWidth: 2,
+		borderRadius: 100,
+		padding: 2,
 	},
 	plus: {},
 	image: {
 		width: imageSize,
 		height: imageSize,
 		borderRadius: 1000,
-		borderWidth: 0.5,
-		borderColor: theme.colors.grey,
+		borderWidth: 2,
+		borderColor: theme.colors.white,
 	},
 	text: {
 		marginTop: '5%',

@@ -39,11 +39,9 @@ const Histories: React.FC = () => {
 export default Histories;
 
 const styles = StyleSheet.create({
-	container: {},
 	header: {
 		height: width / 3.75,
 		backgroundColor: theme.colors.primary,
-		zIndex: 111,
 	},
 });
 interface renderItemProps {
