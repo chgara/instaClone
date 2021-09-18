@@ -4,7 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import StyledText from 'components/StyledText';
 import theme from 'utils/themes/theme';
-import { width } from 'utils/constants/dimensions';
+import { borderSize, imageSize } from 'utils/constants/dimensions';
 
 //TODO: add styles border
 const CreateHistory: React.FC<props> = ({ imageSource }) => {
@@ -34,7 +34,8 @@ const CreateHistory: React.FC<props> = ({ imageSource }) => {
 			</LinearGradient>
 			<StyledText
 				numberOfLines={1}
-				small
+				smaller
+				dark
 				bold
 				style={styles.text}
 			>
@@ -49,8 +50,6 @@ interface props {
 	imageSource: string;
 }
 
-const imageSize = width / 5.8;
-const borderSize = width / 5.5;
 const styles = StyleSheet.create({
 	history: {
 		width: borderSize,
@@ -64,21 +63,21 @@ const styles = StyleSheet.create({
 		height: borderSize,
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderRadius: 100,
+		borderRadius: theme.border.roundedMain,
 	},
 	logoContainer: {
 		position: 'absolute',
 		bottom: -borderSize / 20,
 		right: -borderSize / 20,
-		borderRadius: 100,
+		borderRadius: theme.border.roundedMain,
 		padding: 2,
 	},
 	plus: {},
 	image: {
 		width: imageSize,
 		height: imageSize,
-		borderRadius: 1000,
-		borderWidth: 2,
+		borderRadius: theme.border.roundedMain,
+		borderWidth: 3,
 		borderColor: theme.colors.white,
 	},
 	text: {

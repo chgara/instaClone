@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import { registerRootComponent } from 'expo';
 import useCachedResources from 'hooks/useCachedResources';
 import Navigation from 'navigation';
+import AuthContext, { authReducer } from 'context/Auth';
 
-export default function Main() {
+function Main() {
+	const [state, dispatch] = useReducer(authReducer, {
+		isAuthed: false,
+	});
+	const value = { state, dispatch };
+	return (
+		<AuthContext.Provider value={value}>
+			<Navigation />
+		</AuthContext.Provider>
+	);
+}
+export default function App() {
 	const isLoaded = useCachedResources();
 
 	if (!isLoaded) return null;
-
-	return <Navigation />;
+	return <Main />;
 }
 
-registerRootComponent(Main);
+registerRootComponent(App);

@@ -3,7 +3,7 @@ import { Image, StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import StyledText from 'components/StyledText';
 import theme from 'utils/themes/theme';
-import { width } from 'utils/constants/dimensions';
+import { borderSize, imageSize } from 'utils/constants/dimensions';
 
 const History: React.FC<props> = ({ imageSource, name, bff }) => {
 	return (
@@ -21,7 +21,8 @@ const History: React.FC<props> = ({ imageSource, name, bff }) => {
 			</LinearGradient>
 			<StyledText
 				numberOfLines={1}
-				small
+				smaller
+				dark
 				bold
 				style={styles.text}
 			>
@@ -38,8 +39,6 @@ interface props {
 	bff: boolean;
 }
 
-const imageSize = width / 5.8;
-const borderSize = width / 5.5;
 const styles = StyleSheet.create({
 	history: {
 		width: borderSize,
@@ -53,12 +52,12 @@ const styles = StyleSheet.create({
 		height: borderSize,
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderRadius: 1000,
+		borderRadius: theme.border.roundedMain,
 	},
 	image: {
 		width: imageSize,
 		height: imageSize,
-		borderRadius: 1000,
+		borderRadius: theme.border.roundedMain,
 		borderWidth: 3,
 		borderColor: theme.colors.white,
 	},

@@ -2,8 +2,10 @@ import Iscreen from 'types/screen';
 import Home from 'screens/Home';
 import Search from 'screens/Search/index';
 import Profile from 'screens/Profile/index';
+import Auth from './Auth';
+import StackParamList, { AuthParamList } from 'types/ParamLists';
 
-const screens: Iscreen[] = [
+const mainScreens: Iscreen<StackParamList>[] = [
 	{
 		name: 'Home',
 		componet: Home,
@@ -14,4 +16,11 @@ const screens: Iscreen[] = [
 	{ name: 'Profile', componet: Profile, options: {} },
 	{ name: 'Search', componet: Search, options: {} },
 ];
-export default screens;
+export const authScreens: Iscreen<AuthParamList>[] = [
+	{
+		name: 'Auth',
+		componet: Auth,
+		options: { headerShown: false },
+	},
+];
+export default mainScreens;

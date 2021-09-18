@@ -18,7 +18,8 @@ const theme = {
 		mainGradient: ['#4FD6BB', '#36BEC6'],
 	},
 	border: {
-		rounded: 35,
+		rounded: 30,
+		roundedMain: 30,
 	},
 	icons: {
 		normal: 24,

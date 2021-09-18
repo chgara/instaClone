@@ -6,4 +6,9 @@ type StackParamList = {
 	Profile: undefined;
 	post: { postId: string };
 };
+export type AuthParamList = {
+	Initial: undefined;
+	Auth: undefined;
+};
+
 export default StackParamList;

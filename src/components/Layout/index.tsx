@@ -1,24 +1,16 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import RealSafeArea from './RealSafeArea';
 import Footer from 'components/Layout/Footer';
 import theme from 'utils/themes/theme';
 
 const Layout: React.FC = ({ children }) => {
 	return (
-		<View style={styles.container}>
+		<RealSafeArea color={theme.colors.primary}>
 			{children}
 			<Footer />
 			<StatusBar style='auto' />
-		</View>
+		</RealSafeArea>
 	);
 };
 export default Layout;
-
-const styles = StyleSheet.create({
-	container: {
-		width: '100%',
-		height: '100%',
-		backgroundColor: theme.colors.primary,
-	},
-});

@@ -3,7 +3,7 @@ import { StyleSheet, View, Button } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { StackScreenProps } from '@react-navigation/stack';
 import StyledText from 'components/StyledText';
-import StackParamList from 'types/stackParamList';
+import StackParamList from 'types/ParamLists';
 import Layout from 'components/Layout';
 
 const Search: React.FC<props> = ({ navigation }) => {

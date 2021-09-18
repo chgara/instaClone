@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import MainNavigators from 'navigation/Navigators';
-import screens from 'screens';
+import MainNavigators, {
+	AuthNavigators,
+} from 'navigation/Navigators';
+import mainScreens, { authScreens } from 'screens';
+import AuthContext from 'context/Auth';
 
 const Navigation: React.FC = () => {
+	const { state } = useContext(AuthContext);
 	return (
 		<NavigationContainer>
-			<MainNavigators screens={screens} />
+			{state.isAuthed ? (
+				<MainNavigators screens={mainScreens} />
+			) : (
+				<AuthNavigators screens={authScreens} />
+			)}
 		</NavigationContainer>
 	);
 };

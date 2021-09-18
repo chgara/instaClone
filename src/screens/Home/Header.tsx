@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, StatusBar, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import theme from 'utils/themes/theme';
-import { width } from 'utils/constants/dimensions';
+import { borderSize, width } from 'utils/constants/dimensions';
 import InstaCloneIcons from 'utils/icons';
 import InstaLogo from 'assets/images/instagramLogo.png';
 
@@ -36,11 +36,7 @@ const HomeHeader: React.FC = () => {
 export default HomeHeader;
 
 const currentHeight = StatusBar.currentHeight || 0;
-const paddingTop = StatusBar.currentHeight
-	? currentHeight + currentHeight / 2
-	: 50;
-
-const borderSize = width / 5.5;
+const paddingTop = StatusBar.currentHeight ? +currentHeight / 2 : 50;
 
 //TODO: add shadow for ios
 const styles = StyleSheet.create({

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { StyleSheet, Platform, StatusBar } from 'react-native';
+import { StatusBar as Bar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-navigation';
 
 const RealSafeArea: React.FC<Iprops> = props => {
@@ -12,6 +13,7 @@ const RealSafeArea: React.FC<Iprops> = props => {
 			>
 				{props.children}
 			</SafeAreaView>
+			<Bar style='auto' />
 		</>
 	);
 };
@@ -19,7 +21,7 @@ export default RealSafeArea;
 
 interface Iprops {
 	color: string;
-	children: JSX.Element;
+	children: ReactNode;
 }
 const createstyles = (color: string) => {
 	return StyleSheet.create({

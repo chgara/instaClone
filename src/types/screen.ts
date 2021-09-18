@@ -1,18 +1,11 @@
-import {
-	StackNavigationOptions,
-	StackScreenProps,
-} from '@react-navigation/stack';
-import StackParamList from 'types/stackParamList';
+import { ParamListBase } from '@react-navigation/native';
+import { StackNavigationOptions } from '@react-navigation/stack';
 
-interface Iscreen {
-	componet: React.FC<IscreenComponentProps>;
-	name: routeName;
+interface Iscreen<T extends ParamListBase> {
+	componet: React.FC;
+	name: routeName<T>;
 	options?: StackNavigationOptions;
 }
-type IscreenComponentProps = StackScreenProps<
-	StackParamList,
-	routeName
->;
 export default Iscreen;
 
-export type routeName = keyof StackParamList;
+export type routeName<T extends ParamListBase> = keyof T;

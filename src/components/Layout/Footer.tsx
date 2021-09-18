@@ -5,11 +5,14 @@ import InstaCloneIcons from 'utils/icons';
 import theme from 'utils/themes/theme';
 import defaultScreens from 'utils/constants/defaultScreens';
 import { routeName } from 'types/screen';
+import StackParamList from 'types/ParamLists';
 
 const Footer: React.FC = () => {
 	const route = useRoute();
 	const navigatior = useNavigation();
-	const handlePress = (name: routeName): (() => void) => {
+	const handlePress = (
+		name: routeName<StackParamList>
+	): (() => void) => {
 		return () => navigatior.navigate(name);
 	};
 	return (
@@ -31,6 +34,7 @@ const Footer: React.FC = () => {
 };
 export default Footer;
 
+//TODO: add shadow in ios
 const styles = StyleSheet.create({
 	footer: {
 		width: '100%',
@@ -44,5 +48,13 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		borderTopEndRadius: theme.border.rounded,
 		borderTopStartRadius: theme.border.rounded,
+		shadowColor: theme.colors.secondary,
+		shadowOffset: {
+			width: 0,
+			height: -5,
+		},
+		shadowRadius: 5,
+		shadowOpacity: 0.5,
+		elevation: 20,
 	},
 });

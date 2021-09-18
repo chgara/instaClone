@@ -7,7 +7,9 @@ const StyledText: React.FC<IStyledTextProps> = ({
 	bold,
 	light,
 	small,
+	smaller,
 	big,
+	bigger,
 	dark,
 	white,
 	uppercase,
@@ -19,7 +21,9 @@ const StyledText: React.FC<IStyledTextProps> = ({
 		bold && styles.bold,
 		light && styles.light,
 		small && styles.small,
+		smaller && styles.smaller,
 		big && styles.big,
+		bigger && styles.bigger,
 		dark && styles.dark,
 		white && styles.white,
 		uppercase && styles.uppercase,
@@ -41,7 +45,9 @@ interface IStyledTextProps {
 	bold?: boolean;
 	light?: boolean;
 	small?: boolean;
+	smaller?: boolean;
 	big?: boolean;
+	bigger?: boolean;
 	dark?: boolean;
 	white?: boolean;
 	uppercase?: boolean;

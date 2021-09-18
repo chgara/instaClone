@@ -9,8 +9,7 @@ const posts: Ipost[] = [
 		liked: true,
 		numLikes: 3222,
 		numComments: 30,
-		imageSrc:
-			'https://ideakreativa.net/wp-content/uploads/2019/09/minimalismo-reglas-y-ejemplos-1.jpg',
+		imageSrc: 'https://source.unsplash.com/1600x900/?wallpaper',
 	},
 	{
 		profilePic:
@@ -20,8 +19,7 @@ const posts: Ipost[] = [
 		liked: true,
 		numLikes: 3222,
 		numComments: 30,
-		imageSrc:
-			'https://static.comunicae.com/photos/notas/1203769/1554976142_deer_32755941920.jpg',
+		imageSrc: 'https://source.unsplash.com/random',
 	},
 	{
 		profilePic:
@@ -31,8 +29,7 @@ const posts: Ipost[] = [
 		liked: true,
 		numLikes: 3222,
 		numComments: 30,
-		imageSrc:
-			'https://i.pinimg.com/originals/d2/d3/14/d2d314d35f4f55876611bb3433fb6ef4.jpg',
+		imageSrc: 'https://source.unsplash.com/1600x900/?nature',
 	},
 	{
 		profilePic:
@@ -42,8 +39,7 @@ const posts: Ipost[] = [
 		liked: true,
 		numLikes: 3222,
 		numComments: 30,
-		imageSrc:
-			'https://www.nawpic.com/media/2020/minimalist-iphone-nawpic-3.jpg',
+		imageSrc: 'https://source.unsplash.com/1600x900/?city',
 	},
 	{
 		profilePic:
@@ -53,8 +49,7 @@ const posts: Ipost[] = [
 		liked: true,
 		numLikes: 3222,
 		numComments: 30,
-		imageSrc:
-			'https://images.squarespace-cdn.com/content/v1/5442b6cce4b0cf00d1a3bef2/1583447907028-SAOY3CFXUSVX4YUA1B6M/minimalist-books.jpg?format=750w',
+		imageSrc: 'https://source.unsplash.com/1600x900/?cars',
 	},
 ];
 export default posts;
