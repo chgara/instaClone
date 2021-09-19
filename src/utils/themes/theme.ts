@@ -14,6 +14,7 @@ const theme = {
 		black: 'black',
 		grey: 'grey',
 		accent: 'red',
+		transparent: 'rgba(0,0,0,0)',
 		transparentWhite: 'rgba(255, 255, 255, 0.74)',
 		mainGradient: ['#4FD6BB', '#36BEC6'],
 	},

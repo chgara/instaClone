@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 import data from 'data/posts';
 import Post, { postHeight } from 'components/Post';
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
 	body: {
 		flex: 1,
 		overflow: 'hidden',
+		backgroundColor: theme.colors.primary,
 		borderTopEndRadius: theme.border.rounded,
 		borderTopStartRadius: theme.border.rounded,
 	},

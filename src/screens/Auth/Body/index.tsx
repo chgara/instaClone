@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { StyleSheet, Button, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import SeparatedInput from 'components/elements/Inputs/SeparatedInput';
+import AuthContext from 'context/Auth';
 
 const AuthBody: React.FC = () => {
 	const navigation = useNavigation();
@@ -13,6 +14,7 @@ const AuthBody: React.FC = () => {
 	const onChangeText = (text: string): void => {
 		setPhoneNumber(text.split(''));
 	};
+	const { dispatch } = useContext(AuthContext);
 	return (
 		<View style={styles.body}>
 			<SeparatedInput
@@ -20,8 +22,10 @@ const AuthBody: React.FC = () => {
 				onChangeText={onChangeText}
 			/>
 			<Button
-				title='Go back'
-				onPress={() => navigation.goBack()}
+				title='Login'
+				onPress={() =>
+					dispatch({ type: 'logUser', userId: 1 })
+				}
 			/>
 		</View>
 	);

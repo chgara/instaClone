@@ -1,6 +1,7 @@
+import StackParamList from 'types/ParamLists';
 import { routeName } from 'types/screen';
 
-const defaultScreens: routeName[] = [
+const defaultScreens: routeName<StackParamList>[] = [
 	'Home',
 	'Search',
 	'Plus',
