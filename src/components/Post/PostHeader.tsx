@@ -11,7 +11,7 @@ const PostHeader: React.FC<props> = ({ profilePic, profileName }) => {
 				style={styles.profilePic}
 				source={{ uri: profilePic }}
 			/>
-			<StyledText bold style={styles.text} white>
+			<StyledText small bold style={styles.text} white>
 				{profileName}
 			</StyledText>
 			<View style={styles.share}>

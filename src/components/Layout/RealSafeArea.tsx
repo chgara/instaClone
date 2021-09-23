@@ -1,5 +1,10 @@
 import React, { ReactNode } from 'react';
-import { StyleSheet, Platform, StatusBar } from 'react-native';
+import {
+	StyleSheet,
+	Platform,
+	StatusBar,
+	StyleProp,
+} from 'react-native';
 import { StatusBar as Bar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-navigation';
 
@@ -9,7 +14,7 @@ const RealSafeArea: React.FC<Iprops> = props => {
 		<>
 			<SafeAreaView
 				forceInset={{ bottom: 'never' }}
-				style={styles.AndroidSafeArea}
+				style={[styles.AndroidSafeArea, props.style]}
 			>
 				{props.children}
 			</SafeAreaView>
@@ -22,6 +27,7 @@ export default RealSafeArea;
 interface Iprops {
 	color: string;
 	children: ReactNode;
+	style?: StyleProp<any>;
 }
 const createstyles = (color: string) => {
 	return StyleSheet.create({

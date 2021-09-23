@@ -6,7 +6,7 @@ import AuthContext, { authReducer } from 'context/Auth';
 
 function Main() {
 	const [state, dispatch] = useReducer(authReducer, {
-		isAuthed: true,
+		isAuthed: false,
 	});
 	const value = { state, dispatch };
 	return (

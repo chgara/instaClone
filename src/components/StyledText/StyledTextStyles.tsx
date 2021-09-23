@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
 		fontFamily: 'Poppins-bold',
 	},
 	light: {
-		fontWeight: '300',
+		fontFamily: 'Poppins-light',
 	},
 	small: {
 		fontSize: 14,

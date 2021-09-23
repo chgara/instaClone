@@ -5,6 +5,7 @@ import styles from './StyledTextStyles';
 const StyledText: React.FC<IStyledTextProps> = ({
 	children,
 	bold,
+	bolder,
 	light,
 	small,
 	smaller,
@@ -19,6 +20,7 @@ const StyledText: React.FC<IStyledTextProps> = ({
 	const textStyles: StyleProp<any>[] = [
 		styles.text,
 		bold && styles.bold,
+		bolder && styles.bolder,
 		light && styles.light,
 		small && styles.small,
 		smaller && styles.smaller,
@@ -43,6 +45,7 @@ export default StyledText;
 interface IStyledTextProps {
 	children: string;
 	bold?: boolean;
+	bolder?: boolean;
 	light?: boolean;
 	small?: boolean;
 	smaller?: boolean;

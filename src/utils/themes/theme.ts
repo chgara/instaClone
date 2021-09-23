@@ -9,10 +9,11 @@ const theme = {
 		// secondary: isDark ? 'white' : 'black',
 		primary: 'white',
 		secondary: 'black',
-		third: 'blue',
+		third: '#4FD6BB',
+		fourth: '#36BEC6',
 		white: 'white',
 		black: 'black',
-		grey: 'grey',
+		grey: '#ced4da',
 		accent: 'red',
 		transparent: 'rgba(0,0,0,0)',
 		transparentWhite: 'rgba(255, 255, 255, 0.74)',
@@ -21,12 +22,14 @@ const theme = {
 	border: {
 		rounded: 30,
 		roundedMain: 30,
+		roundedMin: 5,
 	},
 	icons: {
 		normal: 24,
 	},
 	elevation: {
 		normal: 5,
+		medium: 12,
 		high: 20,
 	},
 };
