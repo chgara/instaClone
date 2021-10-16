@@ -7,11 +7,9 @@ import AuthPaginationContext, {
 	authPaginationReducer,
 } from 'context/Auth/authPaginationContext';
 
-const AuthLayout: React.FC<props> = ({ children }) => {
-	const [state, dispatch] = useReducer(
-		authPaginationReducer,
-		'login'
-	);
+const AuthLayout: React.FC<props> = ({ register, children }) => {
+	const page = register ? 'register' : 'login';
+	const [state, dispatch] = useReducer(authPaginationReducer, page);
 	const value = { state, dispatch };
 	return (
 		<AuthPaginationContext.Provider value={value}>
@@ -28,6 +26,7 @@ export default AuthLayout;
 
 interface props {
 	children: ReactNode;
+	register?: boolean;
 }
 
 const styles = StyleSheet.create({

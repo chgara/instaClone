@@ -5,9 +5,10 @@ import AuthLayout from './Layout';
 import AuthHeader from './Header';
 import AuthBody from './Body';
 
-const Auth: React.FC<props> = ({}) => {
+const Auth: React.FC<props> = ({ route }) => {
+	const { params } = route;
 	return (
-		<AuthLayout>
+		<AuthLayout register={params?.register}>
 			<AuthHeader />
 			<AuthBody />
 		</AuthLayout>

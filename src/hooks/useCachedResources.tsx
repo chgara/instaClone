@@ -4,6 +4,10 @@ import * as React from 'react';
 import { Asset } from 'expo-asset';
 import { Image } from 'react-native';
 
+/**
+ * This hook preven screen to load before all the
+ * resources has been loeaded correctly
+ */
 export default function useCachedResources() {
 	const [isLoadingComplete, setLoadingComplete] = React.useState(
 		false
@@ -17,7 +21,7 @@ export default function useCachedResources() {
 
 				const images = [
 					require('../../assets/images/instagramLogo.png'),
-					require('../../assets/images/login.svg'),
+					require('../../assets/images/login.png'),
 				];
 				const imageAssets = await cacheImages(images);
 

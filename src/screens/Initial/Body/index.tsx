@@ -1,27 +1,30 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import MemoLoginSVG from './Image';
 import StyledText from 'components/StyledText';
 import Button from 'components/elements/Button';
+import ImageSrc from 'assets/images/login.png';
+import { width } from 'utils/constants/dimensions';
 
 const InitialBody: React.FC = () => {
 	const navigation = useNavigation();
-	const handlePress = () => {
+	const handleLoginPress = () => {
 		navigation.navigate('Auth');
+	};
+	const handleRegisterPress = () => {
+		navigation.navigate('Auth');
+		navigation.navigate('Auth', { register: true });
 	};
 	return (
 		<View style={styles.body}>
-			<View style={styles.img}>
-				<MemoLoginSVG />
-			</View>
+			<Image source={ImageSrc} style={styles.img} />
 			<View style={styles.footer}>
-				<Button content='Login' handlePress={handlePress} />
+				<Button content='Login' onPress={handleLoginPress} />
 				<Button
 					content='Register'
 					secondary
 					style={styles.secondaryButton}
-					handlePress={handlePress}
+					onPress={handleRegisterPress}
 				/>
 				<StyledText style={styles.terms} small>
 					Terms of service
@@ -37,20 +40,19 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	img: {
-		flex: 1,
+		width: width,
+		height: width,
+		marginBottom: '15%',
 	},
 	footer: {
 		flex: 0.5,
 		alignSelf: 'center',
-		width: '70%',
+		width: '75%',
 		alignItems: 'center',
 		marginBottom: '1%',
 	},
 	secondaryButton: {
 		marginTop: '10%',
 	},
-	terms: {
-		position: 'absolute',
-		bottom: '15%',
-	},
+	terms: { paddingTop: '20%' },
 });

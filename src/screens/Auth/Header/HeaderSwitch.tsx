@@ -21,7 +21,13 @@ const HeaderSwitch: React.FC = () => {
 			<SwitchSelector
 				options={options}
 				initial={state === 'login' ? 0 : 1}
-				selectedColor={theme.colors.secondary}
+				selectedColor={theme.colors.primary}
+				buttonColor={theme.colors.third}
+				backgroundColor={theme.colors.fourth}
+				hasPadding
+				buttonMargin={5}
+				valuePadding={1}
+				borderRadius={theme.border.rounded}
 				textColor={theme.colors.grey}
 				onPress={handlePress}
 			/>
@@ -33,5 +39,6 @@ export default HeaderSwitch;
 const styles = StyleSheet.create({
 	headerSwitch: {
 		width: '100%',
+		marginVertical: '5%',
 	},
 });

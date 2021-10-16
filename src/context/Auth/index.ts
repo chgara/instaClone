@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 export const authReducer = (
 	state: IauthContext,
-	action: Iaction
+	action: IauthContextAction
 ): IauthContext => {
 	switch (action.type) {
 		case 'logUser': {

@@ -8,7 +8,7 @@ type StackParamList = {
 };
 export type AuthParamList = {
 	Initial: undefined;
-	Auth: undefined;
+	Auth: { register?: boolean };
 };
 
 export default StackParamList;

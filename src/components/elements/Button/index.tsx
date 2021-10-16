@@ -10,7 +10,7 @@ import StyledText from 'components/StyledText';
 import theme from 'utils/themes/theme';
 
 const Button: React.FC<props> = ({
-	handlePress,
+	onPress,
 	content,
 	secondary,
 	style,
@@ -21,8 +21,7 @@ const Button: React.FC<props> = ({
 				style={[styles.button, styles.secondaryButton, style]}
 			>
 				<TouchableHighlight
-					underlayColor={'white'}
-					onPress={handlePress}
+					onPress={onPress}
 					style={styles.touchable}
 				>
 					<StyledText dark>{content}</StyledText>
@@ -37,8 +36,7 @@ const Button: React.FC<props> = ({
 				style={[styles.button, style]}
 			>
 				<TouchableHighlight
-					underlayColor={'white'}
-					onPress={handlePress}
+					onPress={onPress}
 					style={styles.touchable}
 				>
 					<StyledText white>{content}</StyledText>
@@ -50,7 +48,7 @@ const Button: React.FC<props> = ({
 export default Button;
 
 interface props {
-	handlePress: () => void;
+	onPress: () => void;
 	secondary?: boolean;
 	content: string;
 	style?: StyleProp<any>;

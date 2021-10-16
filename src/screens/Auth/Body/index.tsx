@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
-import { StyleSheet, Button, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, View } from 'react-native';
 import SeparatedInput from 'components/elements/Inputs/SeparatedInput';
 import AuthContext from 'context/Auth';
+import Button from 'components/elements/Button';
+import AuthPaginationContext from 'context/Auth/authPaginationContext';
 
 const AuthBody: React.FC = () => {
-	const navigation = useNavigation();
 	const [phoneNumber, setPhoneNumber] = useState(
 		new Array(9).fill(0)
 	);
@@ -15,6 +15,7 @@ const AuthBody: React.FC = () => {
 		setPhoneNumber(text.split(''));
 	};
 	const { dispatch } = useContext(AuthContext);
+	const { state } = useContext(AuthPaginationContext);
 	return (
 		<View style={styles.body}>
 			<SeparatedInput
@@ -22,7 +23,8 @@ const AuthBody: React.FC = () => {
 				onChangeText={onChangeText}
 			/>
 			<Button
-				title='Login'
+				content={state === 'login' ? 'Login' : 'Register'}
+				style={styles.button}
 				onPress={() =>
 					dispatch({ type: 'logUser', userId: 1 })
 				}
@@ -35,7 +37,9 @@ export default AuthBody;
 const styles = StyleSheet.create({
 	body: {
 		width: '100%',
-		backgroundColor: 'green',
 		alignItems: 'center',
+	},
+	button: {
+		marginTop: '10%',
 	},
 });
