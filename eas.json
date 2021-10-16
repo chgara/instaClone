@@ -1,7 +1,10 @@
 {
 	"build": {
-		"release": {},
+		"release": {
+			"releaseChannel": "production"
+		},
 		"development": {
+			"releaseChannel": "alpha-v1",
 			"developmentClient": true,
 			"distribution": "internal",
 			"env": {

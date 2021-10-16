@@ -1,5 +1,4 @@
 import React, { useReducer } from 'react';
-import { registerRootComponent } from 'expo';
 import useCachedResources from 'hooks/useCachedResources';
 import Navigation from 'navigation';
 import AuthContext, { authReducer } from 'context/Auth';
@@ -21,5 +20,3 @@ export default function App() {
 	if (!isLoaded) return null;
 	return <Main />;
 }
-
-registerRootComponent(App);
