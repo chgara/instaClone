@@ -1,7 +1,7 @@
 {
 	"build": {
 		"release": {
-			"releaseChannel": "production"
+			"releaseChannel": "production-v1"
 		},
 		"development": {
 			"releaseChannel": "alpha-v1",
